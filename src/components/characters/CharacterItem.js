@@ -16,10 +16,24 @@ const CharacterItem = ({ item }) => {
               <strong>Description: </strong> {item.description}
             </li>
             <li>
-              Detail: <a href={item.urls[0].url}>Associated Comic Series</a>
+              Detail:{' '}
+              <a
+                href={item.urls[0].url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Detailed Information
+              </a>
             </li>
             <li>
-              Wiki: <a href={item.urls[1].url}>Abilities & Statistics</a>
+              Comics:{' '}
+              <a
+                href={item.urls[1].url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Associated Comic Series
+              </a>
             </li>
           </ul>
         </div>
