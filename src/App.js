@@ -16,7 +16,7 @@ const hash = crypto
   )
   .digest('hex')
 
-const filter = `characters?nameStartsWith=${query}&orderBy=name&ts=`
+// const filter = `characters?nameStartsWith=${query}&orderBy=name&ts=`
 
 const App = () => {
   const [items, setItems] = useState([])
