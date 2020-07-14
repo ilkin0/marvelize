@@ -16,14 +16,7 @@ const hash = crypto
   )
   .digest('hex')
 
-// const charactersUrl =
-//   process.env.REACT_APP_MARVEL_API_BASE_URL +
-//   'characters?ts=' +
-//   ts +
-//   '&apikey=' +
-//   process.env.REACT_APP_MARVEL_API_PUBLIC_KEY +
-//   '&hash=' +
-//   hash
+const filter = `characters?nameStartsWith=${query}&orderBy=name&ts=`
 
 const App = () => {
   const [items, setItems] = useState([])
@@ -35,7 +28,6 @@ const App = () => {
       setIsLoading(true)
       const result = await axios(
         process.env.REACT_APP_MARVEL_API_BASE_URL +
-          // `characters?nameStartsWith=${query}&orderBy=name&ts=` +
           `characters?&orderBy=name&ts=` +
           ts +
           `&apikey=` +
@@ -57,6 +49,7 @@ const App = () => {
       <CharacterGrid isLoading={isLoading} items={items} />
     </div>
   )
+  //TODO implement search through Search.js anf query
   //TODO pagination
 }
 
